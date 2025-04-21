@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" :class="{ 'dark': darkMode }">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Footslog 2025 | Rotaract Club FRCRCE</title>
+  <meta name="description" content="Join Footslog 2025 by Rotaract Club FRCRCE – an adventurous trek through the Sahyadris! Register now.">
+ <!-- lottie -->
+   <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+
+
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Playfair+Display:wght@400;900&family=Viaoda+Libre&display=swap');
+    </style>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- AOS Scroll Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome and Lightbox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"/>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .floating-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #16a34a;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      font-weight: 600;
+      z-index: 50;
+      animation: pulse 2s infinite;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+    .floating-button:hover {
+      background-color: #15803d;
+      transform: scale(1.05);
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .dark h2, .dark h3 {
+      text-shadow: 0 0 10px rgba(0, 255, 128, 0.6);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item::after {
+      content: attr(data-caption);
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: white;
+      font-size: 0.875rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2px 6px;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body x-data="{ darkMode: false, modalOpen: false, navOpen: false }" class="bg-gradient-to-b from-green-100 to-white dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-100 font-sans">
+
+  <!-- Navigation -->
+  <nav class="navbar text-sm md:text-base py-3 px-6 flex justify-between items-center shadow-md glass backdrop-blur-lg relative z-40">
+    <div class="font-bold text-lg text-green-700 dark:text-green-400">Footslog 2025</div>
+    <div class="md:flex md:space-x-4 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-transparent dark:bg-gray-800 p-4 md:p-0 z-30">
+      <a href="#about" class="block md:inline-block hover:underline text-gray-800 dark:text-gray-100 py-2 md:py-0">About</a>
+      <a href="#schedule" class="block md:inline-block hover:underline text-gray-800 dark:text-gray-100 py-2 md:py-0">Schedule</a>
+      <a href="#gallery" class="block md:inline-block hover:underline text-gray-800 dark:text-gray-100 py-2 md:py-0">Gallery</a>
+      <a href="#register" @click.prevent="modalOpen = true" class="block md:inline-block hover:underline text-gray-800 dark:text-gray-100 py-2 md:py-0">Register</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center text-white pt-20 overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb'); background-attachment: fixed; background-size: cover; background-position: center;">
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div class="z-10 text-center px-6" data-aos="fade-up">
+
+    <!-- Flex container for side-by-side title -->
+    <div class="flex justify-center items-center gap-4 flex-wrap">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 animate__animated animate__fadeIn animate__delay-1s playfair">Footslog</h1>
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 animate__animated animate__fadeIn animate__delay-1s hurricane-regular">2025</h1>
+    </div>
+
+    <p class="text-xl mb-6 animate__animated animate__fadeIn animate__delay-2s">"Beyond Limits, Together."</p>
+
+    <div class="flex flex-col items-center space-y-4 mb-6">
+      <p id="countdown" class="text-lg md:text-2xl font-semibold text-white bg-green-800 bg-opacity-70 px-4 py-2 rounded-lg shadow animate__animated animate__pulse animate__infinite">
+        Loading countdown...
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center space-y-4">
+      <button @click="modalOpen = true" class="bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition duration-300 hover:bg-white hover:text-green-600 border-2 border-green-600">
+        Register Now
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Other sections (Schedule, Gallery, Register, etc.) remain the same -->
+  <section id="about" class="py-20 px-6 md:px-24 bg-white dark:bg-gray-900" data-aos="fade-up">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold">About the Event</h2>
+      <p class="mt-4 text-lg justify-text">Footslog is an annual one-day trekking event that brings together adventure lovers for an unforgettable journey through nature’s scenic trails. Designed to encourage bonding, self-discovery, and a refreshing break from the everyday hustle, it’s more than just a trek — it’s a celebration of exploration, endurance, and shared experiences. With each step, participants create lasting memories and forge new friendships amidst breathtaking landscapes.</p>
+    </div>
+  </section>
+   <!-- Schedule Section -->
+  <section id="schedule" class="py-20 px-6 md:px-24 bg-gradient-to-r from-green-900 to-green-200 dark:from-gray-800 dark:to-gray-700">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Event Schedule</h2>
+      <div class="text-center mb-8">
+  <a href="assets/itinery.pdf" download class="inline-block bg-green-600 text-white px-6 py-3 rounded-full font-medium shadow hover:bg-white hover:text-black transition ">
+    📄 Download Itinerary PDF
+  </a>
+</div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="p-6 rounded-xl glass text-black text-center shadow-lg transform transition duration-300 hover:scale-105 hover:bg-white hover:text-green-700" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-2xl font-semibold mb-2">⏰ 08:00 AM</h3>
+        <p>Check-in & Briefing</p>
+      </div>
+      <div class="p-6 rounded-xl glass text-black text-center shadow-lg transform transition duration-300 hover:scale-105 hover:bg-white hover:text-green-700" data-aos="zoom-in" data-aos-delay="200">
+        <h3 class="text-2xl font-semibold mb-2">🥾 09:00 AM</h3>
+        <p>Trek Begins</p>
+      </div>
+      <div class="p-6 rounded-xl glass text-black text-center shadow-lg transform transition duration-300 hover:scale-105 hover:bg-white hover:text-green-700" data-aos="zoom-in" data-aos-delay="300">
+        <h3 class="text-2xl font-semibold mb-2">🏔️ 12:00 PM</h3>
+        <p>Summit & Activities</p>
+      </div>
+      <div class="p-6 rounded-xl glass text-black text-center shadow-lg transform transition duration-300 hover:scale-105 hover:bg-white hover:text-green-700" data-aos="zoom-in" data-aos-delay="400">
+        <h3 class="text-2xl font-semibold mb-2">🔙 03:00 PM</h3>
+        <p>Return to Base</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="map" class="py-20 px-6 md:px-24 bg-white dark:bg-gray-900">
+  <h2 class="text-4xl font-bold text-center mb-8" data-aos="fade-up">Trek Route Map</h2>
+  <div class="flex justify-center" data-aos="fade-up" data-aos-delay="100">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7555.928470633726!2d73.4977!3d19.4205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b11fcb80b61d%3A0xf2c59778a3d20607!2sKalsubai%20Peak!5e0!3m2!1sen!2sin!4v1681228281589!5m2!1sen!2sin"
+      width="100%"
+      height="450"
+      style="border:0; border-radius: 12px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+<!-- Divider between Gallery and Map -->
+<div class="relative">
+  <svg class="absolute top-0 left-0 w-full" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#f8fafc" d="M0,32L60,48C120,64,240,96,360,122.7C480,149,600,171,720,154.7C840,139,960,85,1080,64C1200,43,1320,53,1380,58.7L1440,64V0H1380C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0H0Z" />
+  </svg>
+  <div class="h-24 bg-white dark:bg-gray-900"></div>
+</div>
+
+
+  <section id="gallery" class="py-20 px-6 md:px-24 bg-white dark:bg-gray-900">
+    <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Gallery</h2>
+      <!-- Lottie Animation -->
+<div class="flex justify-center mb-10" data-aos="fade-up">
+  <lottie-player
+    src="https://assets4.lottiefiles.com/packages/lf20_xp1b7jph.json"
+    background="transparent"
+    speed="1"
+    style="width: 200px; height: 200px;"
+    loop
+    autoplay>
+  </lottie-player>
+</div>
+
+    <section class="py-16 px-4" style="background: linear-gradient(135deg, #e0f7fa, #e8f5e9);">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+    <a href="https://source.unsplash.com/800x600/?mountains" data-lightbox="footslog" class="relative gallery-item" data-caption="2023 Mountain Trail">
+      <img src="assets/images/f1.jpg" class="rounded-xl shadow-lg w-full h-auto object-cover bg-white p-1" loading="lazy">
+    </a>
+    <a href="https://source.unsplash.com/800x600/?trekking" data-lightbox="footslog" class="relative gallery-item" data-caption="Nature Bliss">
+      <img src="assets/images/f2.jpg" class="rounded-xl shadow-lg w-full h-auto object-cover bg-white p-1" loading="lazy">
+    </a>
+    <a href="https://source.unsplash.com/800x600/?hiking" data-lightbox="footslog" class="relative gallery-item" data-caption="Previous Trek Moments">
+      <img src="assets/images/f3.jpg" class="rounded-xl shadow-lg w-full h-auto object-cover bg-white p-1" loading="lazy">
+    </a>
+    <a href="https://source.unsplash.com/800x600/?nature" data-lightbox="footslog" class="relative gallery-item" data-caption="Summit Views">
+      <img src="assets/images/f4.jpg" class="rounded-xl shadow-lg w-full h-auto object-cover bg-white p-1" loading="lazy">
+    </a>
+  </div>
+</section>
+
+  </section>
+
+  <!-- Register Section -->
+  <section id="register" class="py-20 px-6 md:px-24 bg-gray-100 dark:bg-gray-800">
+  <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Register Now</h2>
+  <div class="max-w-xl mx-auto">
+    <form action="" id="contactForm" @submit.prevent="modalOpen = true; $el.reset()" class="space-y-6">
+      <input type="text" id="fullname" required placeholder="Full Name" class="w-full px-4 py-3 border rounded-md dark:bg-gray-700">
+      <input type="email" id="email" required placeholder="Email Address" class="w-full px-4 py-3 border rounded-md dark:bg-gray-700">
+      <input type="tel" id="phone" required pattern="[0-9]{10}" maxlength="10" title="Please enter a 10-digit phone number" placeholder="Phone Number" class="w-full px-4 py-3 border rounded-md dark:bg-gray-700">
+        <textarea id="message" placeholder="Anything we should know?" class="w-full px-4 py-3 border rounded-md dark:bg-gray-700"></textarea>
+      <button type="submit" id="submit" class="w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700">Submit</button>
+
+    </form>
+
+    <!-- Modal (popup) -->
+    <div x-show="modalOpen" x-transition class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-md text-center">
+        <h3 class="text-2xl font-bold mb-2">🎉 You're Registered!</h3>
+        <p>See you at Footslog 2025!</p>
+        <!-- Close Button to hide the modal -->
+        <button @click="modalOpen = false" class="mt-4 px-6 py-2 bg-green-600 text-white rounded-md">Close</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <a href="#register" class="floating-button">Register</a>
+<section id="faq" class="py-20 px-6 md:px-24 bg-gray-100 dark:bg-gray-900">
+  <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Frequently Asked Questions</h2>
+  <div class="max-w-3xl mx-auto space-y-4" x-data="{ openFAQ: null }">
+    <div class="border border-gray-300 dark:border-gray-700 rounded-md">
+      <button @click="openFAQ === 1 ? openFAQ = null : openFAQ = 1" class="w-full text-left px-4 py-3 font-medium bg-white dark:bg-gray-800 dark:text-white">Is this trek beginner-friendly?</button>
+      <div x-show="openFAQ === 1" x-collapse class="px-4 py-2 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+        Yes! It’s designed to be fun and doable for all fitness levels.
+      </div>
+    </div>
+    <div class="border border-gray-300 dark:border-gray-700 rounded-md">
+      <button @click="openFAQ === 2 ? openFAQ = null : openFAQ = 2" class="w-full text-left px-4 py-3 font-medium bg-white dark:bg-gray-800 dark:text-white">What should I carry?</button>
+      <div x-show="openFAQ === 2" x-collapse class="px-4 py-2 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+        A water bottle, trekking shoes, cap, sunscreen, and a light snack.
+      </div>
+    </div>
+    <div class="border border-gray-300 dark:border-gray-700 rounded-md">
+      <button @click="openFAQ === 3 ? openFAQ = null : openFAQ = 3" class="w-full text-left px-4 py-3 font-medium bg-white dark:bg-gray-800 dark:text-white">Will there be food and transport?</button>
+      <div x-show="openFAQ === 3" x-collapse class="px-4 py-2 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+        Yes, transport and meals are included in the registration.
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="py-6 bg-green-800 dark:bg-green-900 text-white text-center">
+    <p class="hover:underline">&copy; <a href="https://www.instagram.com/rotaract_crce?igsh=cDZncnBvcjFkNXNj">2025 Rotaract Club FRCRCE • Footslog</a> </p>
+  </footer>
+
+  <!-- AOS init -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 1000, once: true });
+    });
+
+    // Countdown script
+    const countdownEl = document.getElementById('countdown');
+    const eventDate = new Date(Date.UTC(2025, 4, 20, 8, 0, 0));  // June 20, 2025, 08:00 AM UTC
+
+    setInterval(() => {
+      const now = new Date();
+      const diff = eventDate - now;
+      if (diff <= 0) {
+        countdownEl.innerText = "🎉 Event has started!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+
+      countdownEl.innerText = `⏳ ${days}d ${hrs}h ${mins}m left`;
+    }, 1000);
+  </script>
+<!-- Firebase SDKs -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+<script src="./fireb.js"></script>
+
+</body>
+</html>
+

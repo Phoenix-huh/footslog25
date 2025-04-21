@@ -1,0 +1,170 @@
+/* Remove custom cursor */
+body {
+  cursor: default;
+}
+
+/* Custom Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.1);  /* Transparent */
+  backdrop-filter: blur(40px);          /* Glass blur */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+
+/* Floating Register Button */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #10B981;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: bold;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  transition: background-color 0.3s;
+}
+
+.floating-button:hover {
+  background-color: #059669;
+}
+
+/* Register Now Button Hover Effect */
+#register a:hover {
+  color: #10B981; /* Green text */
+  background-color: white; /* White background */
+  border: 2px solid #10B981; /* Border green */
+  transition: all 0.3s ease;
+}
+
+/* Schedule Blocks Animation */
+.schedule-block {
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.schedule-block:hover {
+  transform: translateY(-5px); /* Lift effect */
+  background-color: white; /* White background */
+  color: #10B981; /* Green text */
+  border: 2px solid #10B981; /* Border green */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Custom Styles for Schedule Blocks */
+.schedule-block {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  backdrop-filter: blur(20px); /* Light blur */
+  color: white;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.hero-bg {
+  animation: zoomIn 10s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.parallax-bg {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: parallax 10s linear infinite;
+}
+
+@keyframes parallax {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+.floating-button:hover {
+  background-color: #15803d;
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.float-effect {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(-5px); }
+  50% { transform: translateY(5px); }
+  100% { transform: translateY(-5px); }
+}
+.gallery-item:hover img {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease;
+}
+.lightbox img {
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+.lightbox img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+.register-button:hover {
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.faq-item .faq-answer {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+  max-height: 200px;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.faq-item {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open {
+  transform: translateY(5px);
+}
+.
+
+.faq-item.open {
+  transform: translateY(5px);
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+
+.playfair {
+font-family: "Playfair Display", serif;
+}
+
+.hurricane-regular {
+  font-family: "Hurricane", cursive;
+}
