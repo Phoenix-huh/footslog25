@@ -23,10 +23,12 @@ html {
 /* Default styles for mobile and desktop */
 .navbar-links {
   display: flex;
-  flex-direction: row; /* Horizontal layout by default */
+  flex-direction: row; /* Ensure horizontal layout by default */
   justify-content: flex-end; /* Align items to the right */
   align-items: center;
   width: 100%;
+  overflow-x: auto; /* Enable horizontal scroll on mobile if needed */
+  white-space: nowrap; /* Prevent the items from wrapping */
 }
 
 .navbar-links a {
@@ -38,20 +40,15 @@ html {
 @media (max-width: 768px) {
   .navbar-links {
     justify-content: flex-end; /* Keep items aligned to the right */
-    flex-wrap: wrap; /* Allow the items to wrap and fit within the screen */
-    margin-top: 10px; /* Optional: Add top margin if needed */
+    flex-wrap: nowrap; /* Ensure no wrapping on mobile */
   }
 
   .navbar-links a {
     margin-right: 15px;
     padding: 0.5rem;
   }
-
-  /* Optional: Adjust padding for smaller screens */
-  .navbar-links a:hover {
-    padding: 0.5rem 1rem;
-  }
 }
+
 
 
 
