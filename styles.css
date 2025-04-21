@@ -20,6 +20,40 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Default styles for mobile and desktop */
+.navbar-links {
+  display: flex;
+  flex-direction: row; /* Horizontal layout by default */
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-links a {
+  margin-right: 15px; /* Add spacing between the links */
+  padding: 0.5rem;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    justify-content: flex-end; /* Keep items aligned to the right */
+    flex-wrap: wrap; /* Allow the items to wrap and fit within the screen */
+    margin-top: 10px; /* Optional: Add top margin if needed */
+  }
+
+  .navbar-links a {
+    margin-right: 15px;
+    padding: 0.5rem;
+  }
+
+  /* Optional: Adjust padding for smaller screens */
+  .navbar-links a:hover {
+    padding: 0.5rem 1rem;
+  }
+}
+
+
 
 
 /* Floating Register Button */
